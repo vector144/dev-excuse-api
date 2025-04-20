@@ -5,20 +5,8 @@ import excuses from "./excuses.js";
 import { logRequest } from "./requestLogger.js";
 const app = express();
 const PORT = 3000;
-const whitelist = ['http://localhost:3000', 'https://blameshift.netlify.app/'];
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || whitelist.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-};
-
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.get("/excuse", (req, res) => {
   const randomExcuse = excuses[Math.floor(Math.random() * excuses.length)];
