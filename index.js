@@ -5,7 +5,7 @@ import excuses from "./excuses.js";
 import { logRequest } from "./requestLogger.js";
 const app = express();
 const PORT = 3000;
-const whitelist = ['http://localhost:3000', 'https://your-website.com'];
+const whitelist = ['http://localhost:3000', 'https://blameshift.netlify.app/'];
 
 const corsOptions = {
   origin: function (origin, callback) {
