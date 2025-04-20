@@ -1,4 +1,4 @@
-module.exports = [
+const excuses = [
   "It works on my machine.",
   "I thought I fixed that.",
   "The code is correct, the data must be wrong.",
@@ -9,4 +9,32 @@ module.exports = [
   "The tests are outdated.",
   "I was told to stop working on that.",
   "It’s not a bug, it’s a feature.",
+  "I forgot to commit that change.",
+  "There must be a typo somewhere.",
+  "That's just temporary code.",
+  "I was testing something else.",
+  "It worked yesterday.",
+  "I didn't change anything.",
+  "It’s a compatibility issue.",
+  "You’re using the wrong version.",
+  "I didn’t receive that ticket.",
+  "That’s a known issue.",
+  "It’s working as designed.",
+  "I’ll fix it in the next release.",
+  "I assumed that wouldn’t happen.",
+  "We don’t support that browser.",
+  "The server must be down.",
+  "That's above my pay grade.",
+  "It’s a third-party bug.",
+  "That was supposed to be a placeholder.",
+  "My cat walked on the keyboard.",
+  "I was following the documentation.",
+  "That’s weird, let me check...",
+  "It works in production.",
+  "That’s how the framework handles it.",
+  "I was debugging something else.",
+  "I copied it from Stack Overflow.",
+  "That’s not what I meant to do."
 ];
+
+export default excuses;
