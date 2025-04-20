@@ -1,0 +1,12 @@
+[
+  {
+    "ip": "::1",
+    "endpoint": "/excuse",
+    "timestamp": "2025-04-20T04:49:21.102Z"
+  },
+  {
+    "ip": "::1",
+    "endpoint": "/excuse",
+    "timestamp": "2025-04-20T04:53:17.460Z"
+  }
+]

@@ -1,19 +1,39 @@
 // index.js
-import express from 'express';
-import cors from 'cors';
-import excuses from './excuses.js'; // Importing the excuses array
+import express from "express";
+import cors from "cors";
+import excuses from "./excuses.js";
+import { logRequest } from "./requestLogger.js";
 const app = express();
 const PORT = 3000;
-app.use(cors()); // Enable CORS for all routes
+const whitelist = ['http://localhost:3000', 'https://your-website.com'];
 
-// Route to get a random excuse 
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || whitelist.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
+
+app.use(cors(corsOptions));
+
 app.get("/excuse", (req, res) => {
   const randomExcuse = excuses[Math.floor(Math.random() * excuses.length)];
+  const ip = req.ip;
+
+  logRequest(ip, "/excuse");
+
   res.json({ excuse: randomExcuse });
 });
 
-// Basic route
 app.get("/", (req, res) => {
+  const ip = req.ip;
+
+  logRequest(ip, "/");
+
   res.send(
     "Welcome to Developer Excuse Generator API! Use /excuse to get an excuse."
   );
